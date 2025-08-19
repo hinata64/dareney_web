@@ -147,3 +147,113 @@ header{
     transform: scale(1.1);
     color: #06c755; /* LINEのブランドカラー */
 }
+/* スマホ向け (768px以下) */
+@media screen and (max-width: 768px) {
+    /* コンテナ幅を狭くする */
+    .container {
+        width: 95%;
+    }
+
+    /* ヘッダー部分 */
+    .logo {
+        font-size: 24px;
+    }
+    .logo img {
+        width: 50px;
+    }
+    .logo span {
+        font-size: 28px;
+    }
+
+    /* ナビゲーションを縦並びに */
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    .nav-links li {
+        margin-left: 0;
+    }
+
+    /* ヒーロー画像の高さを縮める */
+    #hero {
+        height: 300px;
+    }
+    .hero_inner h1 {
+        font-size: 20px;
+        padding: 0 10px; /* 端に文字がぶつからないように */
+    }
+
+    /* SNSアイコンを小さめに */
+    .social-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .social-icon img {
+        width: 60px;
+        height: 60px;
+    }
+}
+/* ハンバーガーボタン（デフォルト非表示） */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #00eeff;
+}
+/* スマホ用 */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* 最初は非表示 */
+        flex-direction: column;
+        text-align: center;
+        background: #111;
+        padding: 20px 0;
+    }
+
+    /* active が付いたときだけ表示 */
+    #nav.active .nav-links {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        color: #00eeff;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* デフォルト非表示 */
+        flex-direction: column;
+        align-items: center;
+        background: #111;
+        padding: 5px 0;   /* 全体の上下余白をさらに削減 */
+        margin: 0;
+    }
+
+    .nav-links li {
+        margin: 4px 0;   /* 各リンク間の余白をかなり小さく */
+    }
+
+    .nav-links li a {
+        font-size: 16px;   /* 少し小さめにして詰める */
+        padding: 4px 8px;  /* クリック範囲は最小限 */
+        display: inline-block;
+    }
+
+    /* active のときだけ表示 */
+    #nav.active .nav-links {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        color: #00eeff;
+    }
+}
+
+
