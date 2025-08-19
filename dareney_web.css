@@ -1,80 +1,259 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>-DARENRY-埼玉県中学生向け教育サイト</title>
-    <link rel="stylesheet" href="dareney_web.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="container flex pop">
-            <a href=""class="logo">
-                <img src="dareney-icon.png" alt="ロゴ" >
-              <span>DARENEY</span>
-            </a>
-          <!-- ハンバーガーメニュー -->
-        <div class="hamburger" id="hamburger">
-            ☰
-        </div>  
-         <nav id="nav">
-            <ul class="nav-links flex">
-                <li><a href="https://hinata64.github.io/dareney-basic/">基本情報</a></li>
-                <li><a href="https://hinata64.github.io/-/">高校検索</a></li>
-                <li><a href="https://hinata64.github.io/dareney-inquiry/">お問い合わせ</a></li>
-            </ul>
-          </nav>
-        
-    </div>
-    </header>
+body {
+    background-color: rgba(0, 0, 0, 0.945);
+    color: #fff;
+}
 
-    <main>
+ .noto {font-family: "Noto Serif JP", serif;}
 
-        <section id="hero" class="container">
-            <div class="hero_inner noto">
-                <h1>今だけじゃない、その先へ。将来を見据えた教育を</h1>
-            </div>
+.container{
+   width: 90%;
+   max-width: 1120px;
+   margin: 0 auto;
+   position: relative;
+}
+
+.pop{font-family: 'Poppins',sans-serif;}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ヘッダー */
+header{
+    padding: 27px 0;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 1000;
+    letter-spacing: -0.04em;
+}
+.logo img {
+    padding-top: 10px;
+    width: 70px;
+    height: auto;
+    margin-right: 10px;
+}
+.logo span{
+    color: #00eeff;
+    font-size: 50px; /* DARENEY の文字サイズ */
+    line-height: 1; /* 行間をリセット */
+    display: flex;
+    align-items: center;
+}
+.nav-links {
+    display: flex;
+    align-items: center; /* ナビゲーションも中央揃え */
+}
+.nav-links li {
+    margin-left: 40px;
+}
+.nav-links li a {
+    transition: 0.3s;
+    color: #30c749;
+}
+
+.nav-links li a:hover{
+    color:#00eeff ;
+    transition: 0.3s;
+}
+
+#hero {
+    background-image: url(hero.jpg.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 700px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+#hero::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    z-index: 1;
+}
+.hero_inner{
+    z-index: 2;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+.hero_inner h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+#social {
+    background-color: #000; /* 黒背景 */
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 80px;
+}
+
+#social h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ff0000;
+}
+
+#social p {
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.social-icon.youtube:hover {
+    transform: scale(1.1);
+    color: #ff0000;
+}
+
+.social-icon.instagram:hover {
+    transform: scale(1.1);
+    color: #e1306c;
+}
+.social-icon.line:hover {
+    transform: scale(1.1);
+    color: #06c755; /* LINEのブランドカラー */
+}
+/* スマホ向け (768px以下) */
+@media screen and (max-width: 768px) {
+    /* コンテナ幅を狭くする */
+    .container {
+        width: 95%;
+    }
+
+    /* ヘッダー部分 */
+    .logo {
+        font-size: 24px;
+    }
+    .logo img {
+        width: 50px;
+    }
+    .logo span {
+        font-size: 28px;
+    }
+
+    /* ナビゲーションを縦並びに */
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    .nav-links li {
+        margin-left: 0;
+    }
+
+    /* ヒーロー画像の高さを縮める */
+    #hero {
+        height: 300px;
+    }
+    .hero_inner h1 {
+        font-size: 20px;
+        padding: 0 10px; /* 端に文字がぶつからないように */
+    }
+
+    /* SNSアイコンを小さめに */
+    .social-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .social-icon img {
+        width: 60px;
+        height: 60px;
+    }
+}
+/* ハンバーガーボタン（デフォルト非表示） */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #00eeff;
+}
+/* スマホ用 */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* 最初は非表示 */
+        flex-direction: column;
+        text-align: center;
+        background: #111;
+        padding: 20px 0;
+    }
+
+    /* active が付いたときだけ表示 */
+    #nav.active .nav-links {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        color: #00eeff;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* デフォルト非表示 */
+        flex-direction: column;
+        align-items: center;
+        background: #111;
+        padding: 5px 0;   /* 全体の上下余白をさらに削減 */
+        margin: 0;
+    }
+
+    .nav-links li {
+        margin: 4px 0;   /* 各リンク間の余白をかなり小さく */
+    }
+
+    .nav-links li a {
+        font-size: 16px;   /* 少し小さめにして詰める */
+        padding: 4px 8px;  /* クリック範囲は最小限 */
+        display: inline-block;
+    }
+
+    /* active のときだけ表示 */
+    #nav.active .nav-links {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        color: #00eeff;
+    }
+}
 
 
-
-        </section>
-        <section id="social">
-            <div class="container">
-                <h2>公式SNS</h2>
-                <p>最新情報をチェック！</p>
-                <div class="social-links">
-                    <a href="https://www.youtube.com/@D4RENEY" target="_blank" class="social-icon youtube">
-                        <img src="https://images.icon-icons.com/1488/PNG/512/5295-youtube-i_102568.png" alt="YouTube">
-                        <span>YouTube</span>
-                    </a>
-                    <a href="https://www.instagram.com/dareney_jyuken/" target="_blank" class="social-icon instagram">
-                        <img src="https://marketplace.canva.com/sVQVQ/MAGakrsVQVQ/1/tl/canva-instagram-camera-square-icon-instagram-gradient-app-MAGakrsVQVQ.png" alt="Instagram">
-                        <span>Instagram</span>
-                    </a>
-                    <a href="https://line.me/R/ti/p/@895hjlzr" target="_blank" class="social-icon line">
-                        <img src="https://play-lh.googleusercontent.com/74iMObG1vsR3Kfm82RjERFhf99QFMNIY211oMvN636_gULghbRBMjpVFTjOK36oxCbs=w240-h480-rw" alt="LINE">
-                        <span>LINE</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-  
-
-    </main>
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const nav = document.getElementById('nav');
-
-        hamburger.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-    </script>
-</body>
-</html>
